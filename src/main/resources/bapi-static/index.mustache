@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <title>REST API Resources</title>
+</head>
+<body role="document">
+<div class="container theme-showcase">
+    <div class="page-header">
+        <h1 id="logo">
+            <span>WPEngine Billing</span>
+            <span class="small">API Docs</span>
+        </h1>
+    </div>
+    <div class="model-container"></div>
+    <div class="content">
+        <div class="box clearfix">
+        </div>
+        <div class="non-sidebar">
+            <div class="main-content">
+                {{#apiInfo}}
+                    {{#apis}}
+                        <div class="container">
+                            {{#operations}}
+                                {{#operation}}
+                                    <div style="border-style: solid; border-color: #ddd; border-width: 2px; border-radius: 4px; padding: 8px; margin: 4px;">
+                                        <div class="highlight">
+                                            <h2>{{httpMethod}} {{path}}</h2>
+                                            {{#notes}}<h4>{{{notes}}}</h4>{{/notes}}
+                                        </div>
+
+                                        <table class="table table-striped">
+                                            <caption>Parameters</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Source</th>
+                                                    <th>Optional?</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {{#allParams}}
+                                                <tr>
+                                                    <td>{{paramName}}</td>
+                                                    <td>{{complexType}}</td>
+                                                    <td>{{type}}</td>
+                                                    <td>
+                                                        {{#optional}}Y{{/optional}}
+                                                        {{^optional}}N{{/optional}}
+                                                    </td>
+                                                    <td>{{description}}</td>
+                                                </tr>
+                                            {{/allParams}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                {{/operation}}
+                            {{/operations}}
+
+                        </div>
+                    {{/apis}}
+                {{/apiInfo}}
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
