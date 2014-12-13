@@ -11,6 +11,7 @@ class BapiDocGenerator extends SwaggerDocGenerator {
 
   override def supportingFiles = List(
     ("assets/images/logo.png", destinationDir + "/assets/images", "logo.png"),
+    ("assets/css/custom.css", destinationDir + "/assets/css", "custom.css"),
     ("index.mustache", destinationDir, "index.html")
   )
 }

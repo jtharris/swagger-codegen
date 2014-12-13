@@ -1,0 +1,16 @@
+.framed {
+    border-style: solid;
+    border-color: #aaa;
+    border-width: 2px;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.table {
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px;
+    margin: 8px;
+    width: 98%;
+}
